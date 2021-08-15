@@ -1,0 +1,286 @@
+/* Importera fonter */
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Roboto:wght@300;700&display=swap");
+
+body {
+  display: flex;
+  flex-direction: row; /* Default orientering */
+  background-color: rgb(231, 233, 206);
+  font-family: "Arial", sans-serif;
+  /* Om man lägger andra objekt utanför den yttre ramen */
+  /* kommer alla att centrera sig vertikalt */
+  align-items: center;
+  /* Den yttre ramen centreras horisontellt på mitten av sidan */
+  justify-content: center;
+}
+
+/* Utgör det "yttersta inre" området */
+.maincontainer {
+  display: flex; /* Flex ger ett rutmönster */
+  flex-direction: column;
+  width: 90%; /* Marginal mot webbläsarfönstret */
+  max-width: 680px; /* Bli inte hur bred som helst */
+  padding: 3%; /* Den yttre rutans innermarginaler */
+  background-color: rgba(222, 224, 188, 0.959);
+  align-items: center; /* Justera mot horisontell mitt */
+  border: solid;
+  border-width: 1.5px;
+  border-radius: 15px; /* Rundade hörn */
+}
+
+/* Rutan med området som innehåller flaggan */
+.qcontainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3%; /* Innermarginalerna */
+  width: 100%;
+  height: 200px; /* Fast höjd ger ett gränssnitt som inte "hoppar" */
+  max-width: 580px;
+  background-color: rgba(237, 240, 192, 0.959);
+  justify-content: center; /* Vertikal mitt */
+  align-items: center; /* Horisontell mitt */
+  text-align: center;
+  border: solid;
+  border-width: 0.5px;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Flaggan behåller sina proportioner och håller max 50 % av */
+/* bredden på qcontainer */
+.flag {
+  object-fit: contain;
+  width: 50%;
+  height: 120px;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+/* Rutan med området som innehåller svarsalternativen, */
+/* knappen och poängen */
+.acontainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px; /* Separeration från rutan med flaggan*/
+  margin-bottom: 10px;
+  padding: 2%;
+  width: 100%;
+  max-width: 580px;
+  background-color: rgba(237, 240, 192, 0.959);
+  align-items: center;
+  border: solid;
+  border-width: 0.5px;
+  border-radius: 20px;
+}
+
+/* Rutan med området som innehåller formuläret och feedbacken */
+.respond-container {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin-top: 15px;
+  padding: 5px;
+  border: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+  align-items: center;
+}
+
+/* Rutan med området som innehåller formuläret */
+.form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+  background-color: rgba(237, 240, 192, 0.959);
+  text-align: left;
+  border: solid;
+  border-width: 1px;
+  border-color: lightgray;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  height: 180px;
+  justify-content: center; /* Vertikalt centrerat */
+}
+
+/* Rutan som innehåller området med feedback / poänginformation */
+.feedback-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50%;
+  height: 180px;
+  justify-content: center; /* Horisontellt centrerat */
+  align-items: center; /* Vertikalt centrerat */
+  border: solid;
+  border-width: 1px;
+  border-color: lightgray;
+  /* Annan bakgrundsfärg sätts i js-filen */
+  /* background-color: lightgrey; */
+}
+
+/* Själva texten som hör till feedback-containern */
+.feedback-text {
+  padding: 10px;
+  color: darkgray;
+  font-family: "Courier Prime", monospace;
+  font-size: 14px; /* Ändras i js-filen */
+  text-align: left;
+}
+
+/* Rutan som innehåller området med svarsknapp och poäng */
+.io-container {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 450px;
+  width: 95%;
+  height: 90px;
+  background-color: rgba(237, 240, 192, 0.959);
+  align-items: center; /* Vertikalled */
+  border: solid;
+  border-width: 1px;
+  border-color: lightgray;
+}
+
+/* Rutan som innehåller området med knappen och "omgångsräknaren" */
+.button-container {
+  display: flex;
+  width: 40%;
+  margin-left: 10px;
+  justify-content: center;
+  height: 90px;
+  border: solid;
+  border-width: 1px;
+  border-color: lightgray;
+  align-items: center;
+}
+
+/* Ruta som anger hur många drag som gjorts ("omgångsräknare") */
+.ordernum {
+  display: flex;
+  color: white;
+  background-color: green;
+  font-family: "Roboto", sans-serif;
+  font-family: "Courier Prime", monospace;
+  font-size: 12px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 75px; /* Pressar ned objektet i botten av containern*/
+}
+
+/* Rutan som innehåller området med aktuell poäng*/
+.score-container {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  border: solid;
+  border-color: lightgray;
+  border-width: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 90px;
+  align-items: center;
+  background-color: lightgray;
+}
+
+/* Själva texten i poängrutan */
+.score-text {
+  padding: 10px;
+  color: gray;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Tryckknappen, i "normalläge" */
+.pushbutton {
+  margin-left: 10px;
+  margin-right: 10px;
+  background: #faae82;
+  box-shadow: 1px 1px 4px #161818;
+  color: rgb(71, 71, 71);
+  position: relative;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: default;
+  top: 3px;
+  margin-top: 0px;
+  border: none;
+  display: inline;
+  width: 70%;
+  height: 60%;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+/* Tryckknappen i intryckt läge */
+.pushbutton:active {
+  box-shadow: none;
+  top: 7px;
+  transition: 300ms;
+}
+
+.pushbutton:disabled {
+  box-shadow: none;
+  background: #faae82b4;
+}
+
+/* Om något element ska gömmas kan denna klass */
+/* läggas till elementet i fråga från js-filen */
+.hidden {
+  display: none;
+}
+
+/* Ett fönster som lägger sig ovanpå */
+/* (presenterar resultat vid spelslut) */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 600px;
+  background-color: rgb(242, 245, 229);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10; /* Viktigt att det lägger sig överst */
+}
+
+/* "Krysset" som ska stänga rutan */
+/* (är egentligen en knapp) */
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #555;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Ger en blurrig bakgrund vid spelslut */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
+  z-index: 5; /* Viktigt att det lägger sig under modalfönstret */
+}

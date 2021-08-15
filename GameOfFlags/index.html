@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title class="title"></title>
+</head>
+<body>
+    <div class="maincontainer"> <!--Den stora gula bakgrunden-->
+        <div class="qcontainer"> <!---Innehåller kortet med frågan och flaggbilden-->
+            <p>Vilken nation har denna flagga?</p>
+            <img src="images/flag-placeholder.png" class="flag" />
+        </div>
+    
+        <div class ="acontainer"> <!--Innehåller kortet med svarsalternativ-->
+            <div class="respond-container">
+                <form class="form"> <!--Svarsknapparna-->
+                    <p>
+                        <input type="radio" id="nat-1" name="val" value="0">
+                        <label for="nat-1" id="nat-1-text">Alternativ 1</label>
+                    </p>  
+                    <p>
+                        <input type="radio" id="nat-2" name="val" value="1">
+                        <label for="nat-2" id="nat-2-text">Alternativ 2</label>
+                    </p>
+                  
+                    <p>
+                        <input type="radio" id="nat-3" name="val" value="2">
+                        <label for="nat-3" id="nat-3-text">Alternativ 3</label>
+                    </p>
+
+                    <p>
+                        <input type="radio" id="pass" name="val" value="Pass" checked = "checked">
+                        <label for="nat-4" id="nat-4-text">Pass</label>
+                    </p>
+                </form>
+                    
+                <div class="feedback-container"> <!--Återkopplingsrutan-->
+                    <p class="feedback-text">Återkoppling av svar. Denna ruta ska blinka till i grönt om det är rätt svar. Om svaret är fel ska den blinka till i rött och visa det korrekta svaret under en kort tid.</p>
+                </div>
+            </div>
+
+            <div class="io-container"> <!--Svarsknapp och poängruta-->
+                <div class="button-container">
+                    <button class="pushbutton">Ange svar</button>
+                    <div class="ordernum">test</div>
+                </div>
+                    
+            <div class="score-container">
+                <p class="score-text">Denna ruta ska visa poängen allteftersom spelet fortgår. Fem frågor => max 5p.<br>När spelet är slut ska svarsknappen till vänster ha funktionen att nollställa allt så man kan spela igen.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1 class="score-header">Din poäng</h1>
+        <p class="result-text">
+         Din poäng: 
+        </p>
+      </div>
+      <div class="overlay hidden"></div>
+      
+    <script src="script.js"></script>
+</body>
+</html>
