@@ -76,7 +76,7 @@ let setup = function () {
   overlay = document.querySelector(".overlay");
 
   title.textContent = "Game of Flags"; // Texten på webbläsarfliken
-  scoreText.textContent = "Här ska poängen visas";
+  scoreText.textContent = 'Här visas poängen';
   scoreText.style.fontSize = "24px";
   scoreContainer.style.backgroundColor = "transparent";
 };
@@ -282,15 +282,9 @@ const closeResult = function () {
 /*---------------------------------------------------------------*/
 // Implementera funktionen för poängräkning nedan och dess anrop.
 let updateScore = function (theScore) {
-  score += theScore
-  if (score === 0){ score = 0}
-  // Varifrån ska denna funktion anropas?
-  // Hur ska parametern theScore få rätt värde, dvs
-  // hur ska funktionen veta om det är +1, -1 eller 0 poäng?
-  // Hur ska den globala variabeln "score" få rätt värde?
-  // (score ska innehålla den totala poängen i en spelomgång.)
-  // Hur ska den totala poängen kunna skrivas ut i dokumentets poängruta?
-  // Implementera även en rutin som gör att poängen aldrig understiger 0.
+  score += theScore;
+  if (score < 0){score = 0;}
+  scoreText.textContent = score;
   console.log(theScore);
 };
 
