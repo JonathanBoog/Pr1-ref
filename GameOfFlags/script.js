@@ -285,7 +285,6 @@ let updateScore = function (theScore) {
   score += theScore;
   if (score < 0){score = 0;}
   scoreText.textContent = score;
-  console.log(theScore);
 };
 
 setup(); // Sätter vissa startvärden till HTML-dokumentet
