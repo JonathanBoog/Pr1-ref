@@ -174,7 +174,6 @@ const setFeedback = function (val) {
       : `Rätt svar var:\r\n\r\n${correctAnswer}.`
     : "Rätt svar: +1p\r\nFel svar:  -1p\r\nPass:       0p";
 };
-
 /*---------------------------------------------------------------*/
 // Denna funktion formaterar feedback-rutan baserat på parametern style
 const setStyle = function (style) {
@@ -222,6 +221,7 @@ const buttonClick = function () {
 
   if (evaluatedAnswer) {
     setFeedback(evaluatedAnswer);
+    updateScore(evaluatedAnswer)
     setTimeout(function () {
       gameOver ? finishGame() : newQuestion();
     }, 1000);
@@ -282,6 +282,8 @@ const closeResult = function () {
 /*---------------------------------------------------------------*/
 // Implementera funktionen för poängräkning nedan och dess anrop.
 let updateScore = function (theScore) {
+  score += theScore
+  if (score === 0){ score = 0}
   // Varifrån ska denna funktion anropas?
   // Hur ska parametern theScore få rätt värde, dvs
   // hur ska funktionen veta om det är +1, -1 eller 0 poäng?
