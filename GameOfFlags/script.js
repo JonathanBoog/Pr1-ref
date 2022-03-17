@@ -280,7 +280,8 @@ const closeResult = function () {
 };
 
 /*---------------------------------------------------------------*/
-// Implementera funktionen för poängräkning nedan och dess anrop.
+// Lägger till theScore på score
+// Poängen kan ej vara mindre än 0
 let updateScore = function (theScore) {
   score += theScore;
   if (score < 0){score = 0;}
